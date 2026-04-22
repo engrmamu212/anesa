@@ -2,102 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Anisa's Eternal Garden | Built by Muhammad with Love</title>
-    <!-- External CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anisa's Eternal Garden</title>
     <link rel="stylesheet" href="anee.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
 <div class="floating-hearts" id="heartCanvas"></div>
 
+<!-- MUSIC PLAYER -->
+<div class="music-player-container">
+    <div class="player-label">🎵 Memories for Anisa</div>
+    <audio id="bgMusic" loop>
+        <source src="https://chosic.com" type="audio/mpeg">
+    </audio>
+    <button class="music-btn" id="musicToggle">Play Music</button>
+</div>
+
 <div class="container">
-    <!-- Hero Section: Muhammad's identity prominent -->
     <div class="hero">
-        <h1>🌷 Anisa's Secret Garden 🌷<span class="only-badge">✨ only for you ✨</span></h1>
-        <div class="subtitle">where every petal whispers your name</div>
+        <h1>🌷 Anisa's Secret Garden 🌷</h1>
         <div class="name-highlight">✦ My dearest Anisa ✦</div>
         
-        <!-- Clear Creator Credit: MUHAMMAD -->
+        <!-- THE SOUL CALL MESSAGE -->
+        <div class="soul-call">
+            <div class="calling-text">
+                “Anisa, even though we are silent, my heart is calling for you... <br> 
+                it never stops whispering your name in the quiet.”
+                <p>&</p>
+                <p>"CONGRATULATIONS ON YOUR JAMB RESULT" you really try Allah sa shine mafi Alkhairi</p>
+            </div>
+        </div>
+
         <div class="creator-credit">
-            💖 <strong class="muhammad-name">I MUHAMMAD</strong> built this entire website with my heart & code 💖
-        </div>
-        <div class="love-declaration">
-            💗 Anisa, I love you more than anything in this world. You are my everything. 💗
+            💖 Built with a hopeful heart by <strong class="muhammad-name">MUHAMMAD</strong> 💖
         </div>
     </div>
 
-    <!-- ========== PHOTO GALLERY - PICTURES OF ANISA (Embedded) ========== -->
+    <!-- PHOTO GALLERY -->
     <div class="section">
-        <div class="section-title">📸 Anisa's Glowing Gallery 📸</div>
-        <div class="photo-gallery" id="photoGallery">
-            <!-- Anisa's pictures will be inserted here by JavaScript -->
-        </div>
-        <p style="text-align:center; font-size:0.9rem; margin-top:12px;">❤️ Every picture of you, Anisa, makes my heart smile ❤️</p>
+        <div class="section-title">📸 Your Glowing Smile 📸</div>
+        <div class="photo-gallery" id="photoGallery"></div>
     </div>
 
-    <!-- Love Letter from Muhammad -->
+    <!-- LOVE LETTER -->
     <div class="section">
-        <div class="section-title">💌 A Love Letter From Muhammad to You, Anisa 💌</div>
+        <div class="section-title">💌 A Letter from Muhammad 💌</div>
         <div class="love-letter">
             <div class="letter-text">
                 My beautiful Anisa,<br><br>
-                I, <strong class="muhammad-name">Muhammad</strong>, wrote every line of code on this website with you in my heart. 
-                From the floating hearts to every gentle color — it's all dedicated to you, my only love.<br><br>
-                I want you to know that you are the reason I wake up with a smile. Your laughter is my favorite melody,
-                your presence is my safest home. I love you so much that words can never fully capture it. 
-                You are the most precious person in my life, and I promise to cherish you forever.<br><br>
-                This gallery is for <strong>your beautiful pictures only</strong> — because your beauty deserves to be celebrated. 
-                Every time I see your face, I fall in love all over again.<br><br>
-                Yours eternally,<br>
-                <span class="signature-name">Muhammad 💖</span>
-            </div>
-            <div class="signature">💖 Forever yours 💖</div>
-        </div>
-    </div>
-
-    <!-- Reasons I Love You (Muhammad's voice) -->
-    <div class="section">
-        <div class="section-title">🌸 Infinite Reasons Why Muhammad Loves You, Anisa 🌸</div>
-        <div class="reasons-list" id="reasonsContainer"></div>
-        <div style="text-align: center; margin-top: 0.8rem;">
-            <button class="love-btn" id="addReasonBtn">✨ Add another reason (from my soul) ✨</button>
-        </div>
-    </div>
-
-    <!-- Whisper Wall - Messages from Muhammad -->
-    <div class="section">
-        <div class="section-title">💬 Muhammad's Whisper Wall for Anisa 💬</div>
-        <div class="message-area">
-            <div class="secret-message" id="dailyMessage">
-                “Anisa, every time I see your picture, my heart overflows with love. You are my dream come true. — Muhammad 🌸”
-            </div>
-            <button class="love-btn" id="newMessageBtn">🌸 Send a new sweet whisper from Muhammad 🌸</button>
-        </div>
-    </div>
-
-    <!-- Promise Ring -->
-    <div class="section">
-        <div class="promise-ring">
-            <span style="font-size: 2.5rem;">💍✨</span>
-            <h3 style="font-family:'Dancing Script'; font-size: 2rem;">Anisa, will you be my forever?</h3>
-            <p style="margin: 1rem 0;">I, <strong class="muhammad-name">Muhammad</strong>, promise to love you endlessly, stand by your side, and fill your life with joy. This website is my heart's gift to you.</p>
-            <div style="font-size: 1.2rem; font-weight: 500;">❤️ Only You, Always You — Muhammad ❤️</div>
-            <div style="margin-top: 1rem;">
-                <button class="love-btn" id="heartBeatBtn">💓 Feel Muhammad's heartbeat for you 💓</button>
+                I wrote every line with you in my heart. Right now, the silence between us feels loud, but my love for you is louder. 
+                I promise to always be here, to always fight for us, and to love you with everything I am.<br><br>
+               <p>"IF POSSIBLE MA KA DENAH" this words makes me feel so bad Anisa, banji dadinsa bah at all</p>
+                Yours eternally, <span class="signature-name">Muhammad 💖</span>
             </div>
         </div>
     </div>
 
     <footer>
-        🌹 Crafted with infinite love by <strong>MUHAMMAD</strong> for his one and only <strong>ANISA</strong> 🌹<br>
-        Every pixel, every word, every heartbeat belongs to you, my love. You are my everything.
+        🌹 Crafted with infinite love by <strong>MUHAMMAD</strong> for <strong>ANISA</strong> 🌹
     </footer>
 </div>
 
-<!-- External JavaScript -->
 <script src="anee.js"></script>
 </body>
 </html>
