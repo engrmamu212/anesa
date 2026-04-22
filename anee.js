@@ -1,45 +1,40 @@
-// Music Control
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicToggle');
-
-musicBtn.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
-        musicBtn.innerText = "Pause Music";
-    } else {
-        music.pause();
-        musicBtn.innerText = "Play Music";
-    }
-});
-
-// Floating Hearts Background
+// Function to generate floating hearts
 function createHearts() {
-    const container = document.getElementById('heartCanvas');
-    const symbols = ['❤️', '🌸', '✨', '💕'];
-    for (let i = 0; i < 25; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart-particle');
-        heart.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (8 + Math.random() * 10) + 's';
-        heart.style.animationDelay = Math.random() * 5 + 's';
-        container.appendChild(heart);
-    }
+    const canvas = document.getElementById('heartCanvas');
+    const hearts = ['❤️', '🌸', '✨', '💕'];
+    const heart = document.createElement('div');
+    
+    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.position = 'absolute';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = '105vh';
+    heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+    heart.style.opacity = Math.random();
+    heart.style.zIndex = '-1';
+    heart.style.transition = `transform ${Math.random() * 4 + 6}s linear, opacity 3s`;
+    
+    canvas.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.style.transform = `translateY(-110vh) rotate(${Math.random() * 360}deg)`;
+        heart.style.opacity = '0';
+    }, 100);
+
+    setTimeout(() => { heart.remove(); }, 10000);
 }
 
-// Gallery Setup
-const photos = ["anee1.jpg", "anee2.jpg", "anee3.jpg", "anee4.jpg"];
-function renderPhotos() {
-    const gallery = document.getElementById('photoGallery');
-    photos.forEach(src => {
-        const card = document.createElement('div');
-        card.className = 'photo-card';
-        card.innerHTML = `<img class="gallery-img" src="${src}" onerror="this.src='https://placehold.co+❤️'">`;
-        gallery.appendChild(card);
+// Gallery rendering
+const images = ["anee1.jpg", "anee2.jpg", "anee3.jpg", "anee4.jpg"];
+function loadGallery() {
+    const container = document.getElementById('photoGallery');
+    images.forEach(src => {
+        const div = document.createElement('div');
+        div.className = 'photo-card';
+        div.innerHTML = `<img src="${src}" class="gallery-img" onerror="this.src='https://placehold.co+❤️'">`;
+        container.appendChild(div);
     });
 }
 
-window.onload = () => {
-    createHearts();
-    renderPhotos();
-};
+// Start animations
+setInterval(createHearts, 2500);
+window.onload = loadGallery;
